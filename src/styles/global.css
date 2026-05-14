@@ -1,0 +1,133 @@
+/* ===== Reset ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  background: #f5f5f5;
+  color: #1a1a1a;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+a { text-decoration: none; color: inherit; }
+button { border: none; cursor: pointer; font-family: inherit; }
+input { font-family: inherit; outline: none; }
+ul, ol { list-style: none; }
+img { display: block; max-width: 100%; }
+
+/* ===== Variables ===== */
+:root {
+  --primary: #8B1A1A;
+  --primary-dark: #5C1111;
+  --primary-light: #C0392B;
+  --gold: #C9A84C;
+  --gold-light: #fff0d0;
+  --white: #ffffff;
+  --bg: #f5f5f5;
+  --border: #e5e5e5;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666;
+  --text-muted: #999;
+  --radius: 14px;
+  --radius-lg: 16px;
+  --shadow: 0 2px 12px rgba(0,0,0,.07);
+}
+
+/* ===== Layout ===== */
+.page { padding-bottom: 70px; min-height: 100vh; background: var(--bg); }
+
+/* ===== NavBar ===== */
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  height: 56px;
+  background: var(--primary);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+.navbar-back {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 22px;
+}
+.navbar-title { color: #fff; font-size: 17px; font-weight: 600; }
+.navbar-right { width: 36px; }
+
+/* ===== TabBar ===== */
+.tabbar {
+  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 100%; max-width: 480px;
+  height: 56px;
+  background: #fff;
+  display: flex;
+  border-top: 1px solid var(--border);
+  z-index: 100;
+}
+.tabbar-item {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 3px; cursor: pointer;
+  color: var(--text-muted); font-size: 11px;
+}
+.tabbar-item.active { color: var(--primary); }
+.tabbar-icon { font-size: 22px; line-height: 1; }
+
+/* ===== Card ===== */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+/* ===== Section ===== */
+.section { margin: 12px; }
+.section-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px;
+}
+.section-title {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 16px; font-weight: 700; color: var(--text-primary);
+}
+.section-title::before {
+  content: ''; width: 4px; height: 18px;
+  background: var(--primary); border-radius: 2px; flex-shrink: 0;
+}
+.section-more { font-size: 13px; color: var(--text-muted); }
+
+/* ===== Button ===== */
+.btn-primary {
+  background: var(--primary); color: #fff;
+  border-radius: 24px; font-size: 15px; font-weight: 600;
+  padding: 12px 24px; display: inline-flex; align-items: center; justify-content: center;
+}
+.btn-outline {
+  background: #fff; color: var(--primary);
+  border: 1.5px solid var(--primary);
+  border-radius: 24px; font-size: 15px; font-weight: 600;
+  padding: 11px 24px; display: inline-flex; align-items: center; justify-content: center;
+}
+
+/* ===== Price ===== */
+.price { color: var(--primary); font-weight: 700; }
+.price-origin { color: var(--text-muted); font-size: 12px; text-decoration: line-through; }
+
+/* ===== Tag ===== */
+.tag {
+  display: inline-block; font-size: 11px; padding: 2px 8px;
+  border-radius: 20px; font-weight: 500;
+}
+.tag-hot { background: #fde8e8; color: var(--primary); }
+.tag-sale { background: #fff0e0; color: #e67e22; }
+.tag-import { background: #e8f0ff; color: #2563eb; }
+.tag-gift { background: var(--gold-light); color: #a07000; }
+.tag-new { background: #e8f9ef; color: #16a34a; }
+
+/* ===== Goods Card hover ===== */
+.goods-card {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.goods-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.14);
+}
